@@ -15,3 +15,9 @@ class BasePage:
         except (NoSuchElementException):
             return False
         return True
+
+    def element_text(self, how, what):
+        try:
+            return self.browser.find_element(how, what).text
+        except (NoSuchElementException):
+            return NoSuchElementException
