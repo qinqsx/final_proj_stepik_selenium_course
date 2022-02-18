@@ -25,6 +25,5 @@ def browser(request):
         fp.set_preference("intl.accept_languages", language)
         browser = webdriver.Firefox(firefox_profile=fp)
     yield browser
-    browser.implicitly_wait(3)
     print("\nquit browser..")
     browser.quit()
