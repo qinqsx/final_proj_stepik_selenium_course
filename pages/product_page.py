@@ -1,23 +1,16 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
-from selenium.common.exceptions import NoAlertPresentException # в начале файла
-import math
-
-
 
 class ProductPage(BasePage):
-
     def add_product_in_basket(self):
         add_button = self.browser.find_element(*ProductPageLocators.PRODUCT_ADD_BUTTON_LINK)
         add_button.click()
-
 
     def should_be_product_basket_page(self):
         self.should_be_product_url()
         self.should_be_button_add()
         self.should_be_eq_added_massage_and_product_name()
         self.should_be_eq_price_basket_and_product()
-
 
 
     def should_be_product_url(self):
