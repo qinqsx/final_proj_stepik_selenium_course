@@ -14,9 +14,16 @@ class BasePage:
     def open(self):
         self.browser.get(self.url)
 
+
     def element_text(self, how, what):
         try:
             return self.browser.find_element(how, what).text
+        except (NoSuchElementException):
+            return NoSuchElementException
+
+    def send_text(self, how, what, input):
+        try:
+            return self.browser.find_element(how, what).send_keys(input)
         except (NoSuchElementException):
             return NoSuchElementException
 
@@ -50,6 +57,10 @@ class BasePage:
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
