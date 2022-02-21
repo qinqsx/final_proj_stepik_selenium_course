@@ -4,6 +4,7 @@ class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini  a.btn.btn-default")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    LINK = "http://selenium1py.pythonanywhere.com/"
 
 class LoginPageLocators():
     LOGIN_FORM_LINK = (By.CSS_SELECTOR, "#login_form")
@@ -14,6 +15,11 @@ class LoginPageLocators():
     REGISTRATION_SUBMIT_LINK = (By.CSS_SELECTOR, "[name='registration_submit']")
 
 class ProductPageLocators():
+    LINK = "http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/?promo=newYear"
+    LINK2 = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
+    LINK3 = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+    LINK4 = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    LINK_PROMO = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer"
     PRODUCT_ADD_BUTTON_LINK = (By.CSS_SELECTOR, ".btn-add-to-basket")
     PRODUCT_PRICE_LINK = (By.CSS_SELECTOR, "p.price_color")
     PRODUCT_NAME_LINK = (By.CSS_SELECTOR, ".product_main h1")
