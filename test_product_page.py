@@ -5,9 +5,11 @@ from .pages.locators import ProductPageLocators
 import pytest
 import time
 
+"""Тесты для product_page с маркерами, о них подробнее в pytest.ini"""
+
 class TestUserAddToBasketFromProductPage:
-    @pytest.fixture(scope="function", autouse=True)
-    def setup(self, browser):
+    @pytest.fixture(scope="function", autouse=True)    #фикстура устанавливается на каждую последующую функцию в данном классе
+    def setup(self, browser):                          #создаем аккаунт
         email = str(time.time()) + "@fakemail.org"
         password = "Qq391609404"
         link = ProductPageLocators.LINK3
@@ -31,12 +33,12 @@ class TestUserAddToBasketFromProductPage:
         product_page.should_be_product_basket_page()
 
 
-@pytest.mark.parametrize("link", [*[num for num in range(10) if num != 7],
+@pytest.mark.parametrize("urls", [*[num for num in range(10) if num != 7],
                                   pytest.param(7, marks=pytest.mark.xfail)])
 @pytest.mark.need_review
-def test_guest_can_add_product_to_basket(browser, link):
+def test_guest_can_add_product_to_basket(browser, urls):
     # при помощи параметризации узнаем какой тест падает и затем помечаем его как заведомо падающий xfail
-    link = f"{ProductPageLocators.LINK_PROMO}{link}"
+    link = f"{ProductPageLocators.LINK_PROMO}{urls}"
     product_page = ProductPage(browser, link)
     product_page.open()
     product_page.add_product_in_basket()

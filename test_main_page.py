@@ -3,6 +3,8 @@ from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 from .pages.locators import BasePageLocators
 
+"""Тесты главной страницы"""
+
 class TestLoginFromMainPage():
     def test_guest_can_go_to_login_page(self, browser):
         link = BasePageLocators.LINK

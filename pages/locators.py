@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+"""Классы с локаторами для страниц и ссылки на них, для улучшения читаемости кода, так же в случае изменения селектора или ссылки на тот или иной объект упрощает корректировку"""
+
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini  a.btn.btn-default")
@@ -13,6 +15,7 @@ class LoginPageLocators():
     INPUT_PASSWORD_LINK1 = (By.CSS_SELECTOR, "#id_registration-password1")
     INPUT_PASSWORD_LINK2 = (By.CSS_SELECTOR, "#id_registration-password2")
     REGISTRATION_SUBMIT_LINK = (By.CSS_SELECTOR, "[name='registration_submit']")
+    LINK = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
 
 class ProductPageLocators():
     LINK = "http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/?promo=newYear"

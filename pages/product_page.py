@@ -1,6 +1,8 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
 
+"""Методы для тестов product_page с assert для упрощения отслеживания ошибок"""
+
 class ProductPage(BasePage):
     def add_product_in_basket(self):
         add_button = self.browser.find_element(*ProductPageLocators.PRODUCT_ADD_BUTTON_LINK)

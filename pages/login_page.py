@@ -1,6 +1,8 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
 
+"""Методы для тестов login_page с assert для упрощения отслеживания ошибок"""
+
 class LoginPage(BasePage):
     def should_be_login_page(self):
         self.should_be_login_url()

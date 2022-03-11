@@ -5,6 +5,8 @@ from selenium.common.exceptions import TimeoutException
 from .locators import BasePageLocators
 from math import log,sin
 
+"""Инициализация браузера, базовые методы всех страниц для удобства читаемости и облегчения написания и корректировки кода, капча"""
+
 class BasePage:
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
@@ -16,10 +18,7 @@ class BasePage:
 
 
     def element_text(self, how, what):
-        try:
-            return self.browser.find_element(how, what).text
-        except (NoSuchElementException):
-            return NoSuchElementException
+        return self.browser.find_element(how, what).text
 
     def send_text(self, how, what, input):
         try:
