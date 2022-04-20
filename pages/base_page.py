@@ -1,9 +1,12 @@
+from math import log,sin
+from .locators import BasePageLocators
 from selenium.common.exceptions import NoSuchElementException,NoAlertPresentException
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
-from .locators import BasePageLocators
-from math import log,sin
+
+
+
 
 """Инициализация браузера, базовые методы всех страниц для удобства читаемости и облегчения написания и корректировки кода, капча"""
 
