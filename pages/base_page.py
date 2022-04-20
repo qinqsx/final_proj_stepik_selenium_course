@@ -23,12 +23,9 @@ class BasePage:
     def element_text(self, how, what):
         return self.browser.find_element(how, what).text
 
-    def send_text(self, how, what, input):
-        try:
-            return self.browser.find_element(how, what).send_keys(input)
-        except (NoSuchElementException):
-            return NoSuchElementException
-
+    def send_text(self, how, what, text):
+        return self.browser.find_element(how, what).send_keys(text)
+      
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
