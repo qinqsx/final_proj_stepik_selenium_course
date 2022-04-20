@@ -2,13 +2,13 @@ from selenium.webdriver.common.by import By
 
 """Классы с локаторами для страниц и ссылки на них, для улучшения читаемости кода, так же в случае изменения селектора или ссылки на тот или иной объект упрощает корректировку"""
 
-class BasePageLocators():
+class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     BASKET_LINK = (By.CSS_SELECTOR, ".basket-mini  a.btn.btn-default")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
     LINK = "http://selenium1py.pythonanywhere.com/"
 
-class LoginPageLocators():
+class LoginPageLocators:
     LOGIN_FORM_LINK = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM_LINK = (By.CSS_SELECTOR, "#register_form")
     INPUT_EMAIL_LINK = (By.CSS_SELECTOR, "#id_registration-email")
@@ -17,7 +17,7 @@ class LoginPageLocators():
     REGISTRATION_SUBMIT_LINK = (By.CSS_SELECTOR, "[name='registration_submit']")
     LINK = "http://selenium1py.pythonanywhere.com/ru/accounts/login/"
 
-class ProductPageLocators():
+class ProductPageLocators:
     LINK = "http://selenium1py.pythonanywhere.com/ru/catalogue/the-shellcoders-handbook_209/?promo=newYear"
     LINK2 = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"
     LINK3 = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
@@ -30,7 +30,7 @@ class ProductPageLocators():
     PRODUCT_NAME_ADDED_IN_BASKET_LINK = (By.CSS_SELECTOR, "#messages>:nth-child(1) strong")
     SUCCESS_MASSAGE_LINK = (By.CSS_SELECTOR, ".alert-success")
 
-class BasketPageLocators():
+class BasketPageLocators:
     EMPTY_BASKET_MESSAGE_LINK = (By.CSS_SELECTOR, "#content_inner>p")
     QUANTITY_BASKET_LINK = (By.CSS_SELECTOR, "[name='form-0-quantity']")
 
