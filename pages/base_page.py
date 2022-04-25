@@ -24,7 +24,7 @@ class BasePage:
         return self.browser.find_element(how, what).text
 
     def send_text(self, how, what, text):
-        return self.browser.find_element(how, what).send_keys(text)
+        self.browser.find_element(how, what).send_keys(text)
       
     def is_element_present(self, how, what):
         try:
